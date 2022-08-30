@@ -112,13 +112,17 @@ def create_target(label):
     a = 1
    
     make_cnt(targetpath)
+    train_path = "/home/yamewrong/Desktop/lab/dataAug/mobius-dataAug/test_script/train"
+    #train 폴더 경로를 저장
+    os.mkdir(train_path+"/"+label)
+    #Augmentation 할 때 마다 결과를 저장할 폴더를 train 하위에 생성
     for filename in folder_list:
         rn = str(label) + "_aug" + str(a)
 
         # print("this is rn",rn,"*****")
         # filename = '/train/'+str(rn)+'.jpg'
         file_name1 = folder_path + '/' + filename
-        file_name2 = folder_path2 + '/train/' + rn + '.jpg'
+        file_name2 = folder_path2 + '/train/'+ label + '/' + rn + '.jpg'
         os.rename(file_name1, file_name2)
         # print("this is filename",filename,"*****")
         create_cin(rn, file_name2,targetpath)
