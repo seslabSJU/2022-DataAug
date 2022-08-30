@@ -16,6 +16,7 @@ def encode_img(filename):
 
 def create_cnt():
 	folder_path = "/home/yamewrong/Desktop/lab/dataAug/mobius-dataAug/test_script/CSE-filesystem"
+	#원본 이미지가 저장되어 있는 경로
 	folder_list = os.listdir(folder_path)
 	image_list = [file for file in folder_list if file.endswith(".jpg")]
 	print ("image_list: {}".format(image_list))
@@ -29,7 +30,8 @@ def create_cnt():
 	if cnt==1:
 		print("Invalid Input")
 		return 0
-	filename = "/home/yamewrong/Desktop/lab/dataAug/mobius-dataAug/test_script/CSE-filesystem/"+select_name          
+	filename = "/home/yamewrong/Desktop/lab/dataAug/mobius-dataAug/test_script/CSE-filesystem/"+select_name
+	#원본 이미지를 입력받아 filename 에 저장한다
 	payload = {
 		"m2m:cin": {
 		"rn": select_name,
@@ -49,4 +51,3 @@ def create_cnt():
 
 
 create_cnt()
-
